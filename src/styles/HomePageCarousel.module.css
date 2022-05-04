@@ -1,0 +1,80 @@
+.main {
+    width: 96%;
+    margin: auto;
+    margin-top: 40px;
+    background-color: white;
+    padding-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.main > div:nth-child(1) {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(226, 226, 226);
+}
+
+.main > div:nth-child(1) > div {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.main > div:nth-child(1) > button {
+    padding: 10px;
+    font-size: 10px;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 0.8px;
+    background-color: rgb(40, 116, 240);
+    border: 0;
+    cursor: pointer;
+}
+
+.carousels {
+    margin: 0 20px;
+    padding-top: 20px;
+}
+
+.carousels > div:nth-child(1) {
+    height: 130px;
+}
+
+.carousels > div > img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.carousels > div:nth-child(2) {
+    margin: 10px 0 0;
+}
+
+.carousels > div:nth-child(2) > div:nth-child(1) > p {
+    margin: 0;
+    font-size: 12px;
+}
+
+.carousels > div:nth-child(2) > div:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.carousels > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
+    padding: 2px 5px;
+    font-size: 12px;
+    background-color: rgb(56, 142, 60);
+    color: white;
+    border-radius: 3px;
+}
+
+.carousels > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) {
+    font-size: 14px;
+    margin-left: 10px;
+    padding-bottom: 4px;
+}
+
+.carousels > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 500;
+}

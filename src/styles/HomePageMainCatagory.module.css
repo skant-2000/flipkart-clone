@@ -1,0 +1,32 @@
+.main {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 15px 0 15px;
+    margin-bottom: 20px;
+    min-width: 1000px;
+    background-color: white;
+}
+
+.main > div {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+}
+
+.main > div > div {
+    cursor: pointer;
+}
+
+.main > div > div:hover {
+    color: rgb(40, 116, 240);
+}
+
+.main > div > div > img {
+    width: 60px;
+}
+
+.main > div > div > p {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+}
