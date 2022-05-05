@@ -1,10 +1,15 @@
 .main {
     width: 300px;
-    margin: 5px;
-    border: 1px solid red;
+    margin: 10px;
+    background-color: white;
 }
 
-.main > div:nth-child(2) {
+.main > p {
+    margin: 10px 0 0 10px;
+    text-align: left;
+}
+
+.main > div:nth-child(3) {
     display: flex;
     justify-content: space-between;
     width: 92%;
@@ -12,7 +17,7 @@
     margin-top: 10px;
 }
 
-.main > div:nth-child(2) > div {
+.main > div:nth-child(3) > div {
     border: 1px solid rgb(204, 204, 204);
     width: 35%;
     text-align: left;

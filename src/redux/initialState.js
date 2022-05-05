@@ -3,5 +3,8 @@ export const initialState = {
     phone: [],
     mainCatagory: [],
     searchInputValue: "",
-    searchedItem: null
+    searchedItem: null,
+    rangeFilterValue: null,
+    individualItem: null,
+    cart: []
 }

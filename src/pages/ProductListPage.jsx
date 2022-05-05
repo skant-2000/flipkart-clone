@@ -17,7 +17,7 @@ export default function ProductListPage() {
     }, [searchInputValue])
 
   return (
-    <div style={{display: "flex"}}>
+    <div style={{display: "flex", backgroundColor: "rgb(240, 242, 245)"}}>
         <Filter />
         <ProductList />
     </div>

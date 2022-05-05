@@ -1,4 +1,4 @@
-import { SEARCHED_ITEM, SEARCH_INPUT_VALUE, SET_MAIN_CATAGORY, SET_PHONE, SET_TRENDING } from "./actionType";
+import { ADD_TO_CART, INDIVIDUAL_ITEM, RANGE_VALUE, SEARCHED_ITEM, SEARCH_INPUT_VALUE, SET_MAIN_CATAGORY, SET_PHONE, SET_TRENDING } from "./actionType";
 
 const setTrending = (data) => ({
     type: SET_TRENDING,
@@ -46,5 +46,20 @@ export const SearchInputValue = (data) => ({
 
 export const fetchSearchedItem = (data) => ({
     type: SEARCHED_ITEM,
+    payload: data
+})
+
+export const rangeFilterValue = (data) => ({
+    type: RANGE_VALUE,
+    payload: data
+})
+
+export const setIndividualItem = (data) => ({
+    type: INDIVIDUAL_ITEM,
+    payload: data
+})
+
+export const addToCart = (data) => ({
+    type: ADD_TO_CART,
     payload: data
 })

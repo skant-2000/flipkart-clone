@@ -1,0 +1,29 @@
+.main {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.main > div:nth-child(1) > img {
+    max-width: 90%;
+    height: 80vh;
+    margin: auto;
+}
+
+.main > div:nth-child(2) > button {
+    margin: 3px;
+    width: 48%;
+    height: 40px;
+    border: 0;
+    color: white;
+    cursor: pointer;
+}
+
+.main > div:nth-child(2) > button:nth-child(1) {
+    background-color: rgb(255, 159, 0);
+}
+
+.main > div:nth-child(2) > button:nth-child(2) {
+    background-color: rgb(251, 100, 27);
+    
+}

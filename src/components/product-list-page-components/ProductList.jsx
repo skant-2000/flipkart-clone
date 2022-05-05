@@ -1,26 +1,28 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import styles from "../../styles/ProductList.module.css"
+import { useNavigate } from "react-router-dom"
+import { setIndividualItem } from '../../redux/action'
 
 export default function ProductList() {
 
-  const { searchInputValue } = useSelector(state => state)
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
 
-  const { searchedItem } = useSelector(store => store)
+  const { searchInputValue, searchedItem, rangeFilterValue } = useSelector(state => state)
 
   const [products, setProducts] = useState([])
-
-  // DEMO
-//   useEffect(() => {
-//     fetch(`http://localhost:8080/watch`)
-//     .then(res => res.json())
-//     .then(data => setProducts(data))
-// }, [rel])
-// .....
 
   useEffect(() => {
     setProducts(searchedItem)
   }, [searchedItem])
+
+  useEffect(() => {
+    if ( searchedItem ) {
+      let rangeFilter = searchedItem.filter((item) => (item.price.value >= rangeFilterValue[0] && item.price.value <= rangeFilterValue[1]))
+      setProducts(rangeFilter)
+    }
+  }, [rangeFilterValue, searchedItem])
   
   const lowToHigh = () => {
     const getValue = ({ price }) => +price.value;
@@ -47,8 +49,8 @@ export default function ProductList() {
   }
 
   const handleIndividualProduct = (data) => {
-    // e.preventDefault
-    console.log(data)
+    dispatch(setIndividualItem(data))
+    navigate(`/${searchInputValue}/${data.position}`)
   }
 
   return (
@@ -74,12 +76,13 @@ export default function ProductList() {
                   <p>{product.brand}</p>
                   <p>{product.title}</p>
                   {product.price ? (<p>{product.price.raw}</p>) : null}
+                  {product.rating ? (<p>Rating : {product.rating} ⭐</p>) : null}
                 </div>
               </div>
             )
           })}
         </div>
       </div>
-    ) : null}</>
+    ) : <h1 style={{margin: "auto"}}>Fetching...</h1>}</>
   )
 }

@@ -6,8 +6,11 @@ import { ImSearch } from "react-icons/im";
 import { MdShoppingCart } from "react-icons/md";
 import { useDispatch } from 'react-redux';
 import { SearchInputValue } from '../redux/action';
+import { useNavigate } from "react-router-dom"
 
 export default function Navbar() {
+
+    const navigate = useNavigate()
 
     const [searchInput, setSearchInput] = useState("")
 
@@ -15,12 +18,17 @@ export default function Navbar() {
 
     const handleSearchClick = () => {
         dispatch(SearchInputValue(searchInput))
+        navigate(`/${searchInput}`)
+    }
+
+    const redirectToHome = () => {
+        navigate("/")
     }
 
   return (
     <div className={styles.navbar}>
         <div>
-            <div className={styles.brand}>
+            <div className={styles.brand} onClick={redirectToHome}>
                 <div>
                     <img src={flipkart} alt="" />
                 </div>

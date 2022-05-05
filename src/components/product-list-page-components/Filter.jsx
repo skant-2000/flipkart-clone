@@ -2,13 +2,16 @@ import styles from "../../styles/Filters.module.css"
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { rangeFilterValue } from "../../redux/action";
 
 function valuetext(value) {
   return `${value}°C`;
 }
 
 export default function Filter() {
+
+  const dispatch = useDispatch()
 
   const { searchedItem } = useSelector(store => store)
   const [min, setMin] = useState(0)
@@ -35,13 +38,18 @@ export default function Filter() {
     }
   }, [searchedItem])
 
+  useEffect(() => {
+    dispatch(rangeFilterValue(value))
+  }, [value])
+
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
   return (
     <div className={styles.main}>
-      <Box sx={{ width: "90%", margin: "auto" }}>
+      <p>Price</p>
+      <Box sx={{ width: "85%", margin: "auto" }}>
         <Slider
           getAriaLabel={() => 'Temperature range'}
           value={value}
