@@ -1,4 +1,4 @@
-import { ADD_TO_CART, INDIVIDUAL_ITEM, RANGE_VALUE, SEARCHED_ITEM, SEARCH_INPUT_VALUE, SET_MAIN_CATAGORY, SET_PHONE, SET_TRENDING } from "./actionType";
+import { ADD_TO_CART, INCREMENT_COUNT, INDIVIDUAL_ITEM, RANGE_VALUE, SEARCHED_ITEM, SEARCH_INPUT_VALUE, SET_MAIN_CATAGORY, SET_PHONE, SET_TRENDING } from "./actionType";
 import { initialState } from "./initialState";
 
 export const reducer = (store = initialState, {type, payload}) => {

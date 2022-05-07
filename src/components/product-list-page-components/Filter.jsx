@@ -4,6 +4,7 @@ import Slider from '@mui/material/Slider';
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { rangeFilterValue } from "../../redux/action";
+import { BsStarFill } from "react-icons/bs";
 
 function valuetext(value) {
   return `${value}°C`;
@@ -67,6 +68,25 @@ export default function Filter() {
         <span style={{color: "grey"}}>to</span>
         <div>
           {value[1] !== Infinity ? `$${value[1]}` : `$${max}`}
+        </div>
+      </div>
+      <div className={styles.rating}>
+        <p>Customer Rating</p>
+        <div>
+          <input type="checkbox" />
+          <label>4 <BsStarFill /> & above</label>
+        </div>
+        <div>
+          <input type="checkbox" />
+          <label>3 <BsStarFill /> & above</label>
+        </div>
+        <div>
+          <input type="checkbox" />
+          <label>2 <BsStarFill /> & above</label>
+        </div>
+        <div>
+          <input type="checkbox" />
+          <label>1 <BsStarFill /> & above</label>
         </div>
       </div>
     </div>
