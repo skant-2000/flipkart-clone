@@ -25,6 +25,10 @@ export default function Navbar() {
         navigate("/")
     }
 
+    const redirectToCart = () => {
+        navigate('/cart')
+    }
+
   return (
     <div className={styles.navbar}>
         <div>
@@ -44,7 +48,7 @@ export default function Navbar() {
             <button>Login</button>
             <div>Become a Seller</div>
             <div>More</div>
-            <div>
+            <div onClick={redirectToCart}>
                 <div>
                 <MdShoppingCart />
                 </div>
